@@ -1,0 +1,16 @@
+//dog age
+let myAge = 58;
+//First two years of your dog's life
+let earlyyears = 2;
+//Multiplication from dog years to human years
+earlyyears = earlyyears * 10.5;
+//Removing the early years from myAge
+let laterYears = myAge - 2;
+//Multiplying to human years
+laterYears = laterYears * 4;
+//Your dog's age
+let myAgeInDogYears = earlyyears + laterYears;
+//Your dog's name
+let myName = "Tudor".toLowerCase();
+//Output
+console.log(`My name is ${myName}. I am ${myAgeInDogYears} years old in human years which is ${myAge} years old in dog years.`);
