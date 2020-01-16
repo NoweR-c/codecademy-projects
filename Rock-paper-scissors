@@ -1,0 +1,62 @@
+const getUserChoice = userInput => {
+  userInput=userInput.toLowerCase();
+  if(userInput == 'rock' || userInput == 'paper' || userInput == 'scissors' || userInput == 'bomb') {
+    return userInput;
+  }
+  else {
+    console.log("Invalid name!");
+  }
+};
+function getComputerChoice() {
+  let randomNum = Math.floor(Math.random() * 3);
+  if (randomNum == 0) {
+    return "rock";
+  }
+  else if (randomNum == 1) {
+    return "paper";
+  }
+  else {
+    return "scissors";
+  }
+};
+function determineWinner(userChoice, computerChoice) {
+  if(userChoice == computerChoice) {
+    return "Tie";
+  }
+  else if(userChoice == 'rock') {
+    if(computerChoice == 'Paper') {
+      return "Computer won";
+    }
+    else {
+      return"User won";
+    }
+  }
+  if(userChoice == 'paper') {
+    if(computerChoice == 'Scissors') {
+      return "Computer won";
+    }
+    else {
+      return "User won";
+    }
+  }
+  if(userChoice == 'scissors') {
+    if(computerChoice == 'Rock') {
+      return "Computer won";
+    }
+    else {
+      return "User won";
+    }
+  }
+  if (userChoice == 'bomb') {
+    return "Everything exploded! User found the secret bomb!\nUser won!";
+  }
+};
+function playGame() {
+  const userChoice = getUserChoice('bomb');
+  const computerChoice = getComputerChoice();
+  console.log('You threw: ' + userChoice);
+  console.log('The computer threw:' + computerChoice);
+  console.log(determineWinner(userChoice, computerChoice));
+};
+
+playGame();
